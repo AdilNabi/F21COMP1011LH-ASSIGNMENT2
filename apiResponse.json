@@ -1,34 +1,47 @@
 [{
-  "word": "hello",
-  "phonetic": "həˈləʊ",
+  "word": "star",
+  "phonetic": "stɑː",
   "phonetics": [{
-    "text": "həˈləʊ",
-    "audio": "//ssl.gstatic.com/dictionary/static/sounds/20200429/hello--_gb_1.mp3"
-  }, {
-    "text": "hɛˈləʊ"
+    "text": "stɑː",
+    "audio": "//ssl.gstatic.com/dictionary/static/sounds/20200429/star--_gb_2.mp3"
   }],
-  "origin": "early 19th century: variant of earlier hollo ; related to holla.",
+  "origin": "Old English steorra, of Germanic origin; related to Dutch ster, German Stern, from an Indo-European root shared by Latin stella and Greek astēr .",
   "meanings": [{
-    "partOfSpeech": "exclamation",
-    "definitions": [{
-      "definition": "used as a greeting or to begin a phone conversation.",
-      "example": "hello there, Katie!",
-      "synonyms": [],
-      "antonyms": []
-    }]
-  }, {
     "partOfSpeech": "noun",
     "definitions": [{
-      "definition": "an utterance of ‘hello’; a greeting.",
-      "example": "she was getting polite nods and hellos from people",
+      "definition": "a fixed luminous point in the night sky which is a large, remote incandescent body like the sun.",
+      "synonyms": ["celestial body", "heavenly body", "sun", "asteroid", "planet", "planetoid", "orb"],
+      "antonyms": []
+    }, {
+      "definition": "a conventional or stylized representation of a star, typically having five or more points.",
+      "example": "the walls were painted with silver moons and stars",
+      "synonyms": [],
+      "antonyms": []
+    }, {
+      "definition": "a very famous or talented entertainer or sports player.",
+      "example": "a sport star",
+      "synonyms": ["principal", "leading lady", "leading man", "lead", "female lead", "male lead", "hero", "heroine", "celebrity", "superstar", "name", "big name", "famous name", "household name", "somebody", "someone", "lion", "leading light", "celebutante", "public figure", "important person", "VIP", "personality", "personage", "notability", "dignitary", "worthy", "grandee", "luminary", "panjandrum", "celeb", "bigwig", "big shot", "big noise", "big cheese", "big gun", "big fish", "biggie", "heavy", "megastar", "nob", "kahuna", "macher", "high muckamuck", "high muckety-muck"],
+      "antonyms": ["extra", "nobody"]
+    }, {
+      "definition": "a planet, constellation, or configuration regarded as influencing a person's fortunes or personality.",
+      "example": "his golf destiny was written in the stars",
+      "synonyms": [],
+      "antonyms": []
+    }, {
+      "definition": "used in names of starfishes and similar echinoderms with five or more radiating arms, e.g. cushion star, brittlestar.",
       "synonyms": [],
       "antonyms": []
     }]
   }, {
     "partOfSpeech": "verb",
     "definitions": [{
-      "definition": "say or shout ‘hello’.",
-      "example": "I pressed the phone button and helloed",
+      "definition": "(of a film, play, or other show) have (someone) as a principal performer.",
+      "example": "a film starring Liza Minnelli",
+      "synonyms": [],
+      "antonyms": []
+    }, {
+      "definition": "decorate or cover with star-shaped marks or objects.",
+      "example": "thick grass starred with flowers",
       "synonyms": [],
       "antonyms": []
     }]

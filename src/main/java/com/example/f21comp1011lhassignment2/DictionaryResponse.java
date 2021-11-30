@@ -11,7 +11,7 @@ public class DictionaryResponse {
     private String phonetic;
 
     @SerializedName("phonetics")
-    private Spoken[] phonetics;
+    private Phonetic[] phonetics;
 
     @SerializedName("origin")
     private String origin;
@@ -35,11 +35,11 @@ public class DictionaryResponse {
         this.phonetic = phonetic;
     }
 
-    public Spoken[] getPhonetics() {
+    public Phonetic[] getPhonetics() {
         return phonetics;
     }
 
-    public void setPhonetics(Spoken[] phonetics) {
+    public void setPhonetics(Phonetic[] phonetics) {
         this.phonetics = phonetics;
     }
 

@@ -2,7 +2,7 @@ package com.example.f21comp1011lhassignment2;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Spoken {
+public class Phonetic {
 
     @SerializedName("text")
     private String text;
