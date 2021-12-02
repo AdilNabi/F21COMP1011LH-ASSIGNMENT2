@@ -5,7 +5,7 @@ import com.example.f21comp1011lhassignment2.Utilities.APIUtility;
 
 public class Main {
     public static void main(String[] args) {
-        DictionaryResponse[] result = APIUtility.getMoviesFromJSON();
+        DictionaryResponse[] result = APIUtility.getWordFromJSON();
 //        System.out.println(result);
 
 

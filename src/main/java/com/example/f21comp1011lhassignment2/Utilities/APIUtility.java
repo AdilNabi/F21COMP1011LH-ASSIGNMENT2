@@ -5,10 +5,17 @@ import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
 import java.io.FileReader;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class APIUtility {
 
-    public static DictionaryResponse[] getMoviesFromJSON()
+    public static DictionaryResponse[] getWordFromJSON()
     {
         Gson gson = new Gson();
         DictionaryResponse[] result = null;
@@ -28,5 +35,23 @@ public class APIUtility {
             return result;
 
     }
+
+    public static DictionaryResponse[] getMoviesFromAPI(String searchText) throws IOException, InterruptedException {
+        DictionaryResponse[] result = null;
+
+        searchText = searchText.replace(" ", "%20");
+
+        String uri = "https://api.dictionaryapi.dev/api/v2/entries/en/"+searchText;
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(uri)).build();
+
+        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers
+                .ofFile(Paths.get("apiResponse.json")));
+
+        result = getWordFromJSON();
+        return result;
+    }
+
 
 }
