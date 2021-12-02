@@ -1,5 +1,6 @@
-package com.example.f21comp1011lhassignment2;
+package com.example.f21comp1011lhassignment2.Utilities;
 
+import com.example.f21comp1011lhassignment2.Models.DictionaryResponse;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 

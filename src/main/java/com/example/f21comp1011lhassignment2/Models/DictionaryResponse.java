@@ -1,4 +1,4 @@
-package com.example.f21comp1011lhassignment2;
+package com.example.f21comp1011lhassignment2.Models;
 
 import com.google.gson.annotations.SerializedName;
 
