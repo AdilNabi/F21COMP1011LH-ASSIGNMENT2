@@ -4,6 +4,7 @@ import com.example.f21comp1011lhassignment2.Models.DictionaryResponse;
 import com.example.f21comp1011lhassignment2.Utilities.APIUtility;
 import com.example.f21comp1011lhassignment2.Models.*;
 import com.example.f21comp1011lhassignment2.Utilities.SceneChanger;
+import com.google.gson.JsonSyntaxException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -46,13 +47,19 @@ public class wordViewController implements Initializable{
     private Meaning[] meanings;
     private Definition[] definitions;
 
+    /**
+     * This method is called when the search button is pressed for a new word to be called from the online API
+     * @param event
+     * @throws IOException
+     * @throws InterruptedException
+     */
     @FXML
     void getSearchResult(ActionEvent event) throws IOException, InterruptedException
     {
         try{
-            word = APIUtility.getMoviesFromAPI(searchText.getText());
+            word = APIUtility.getWordFromAPI(searchText.getText());
             displayData();
-        } catch(IllegalStateException e)
+        } catch(java.lang.IllegalStateException e)
         {
             errorLabel.setVisible(true);
             errorLabel.setText("Word not found.");
@@ -69,6 +76,9 @@ public class wordViewController implements Initializable{
         displayData();
     }
 
+    /**
+     * Populates view with data of the word
+     */
     public void displayData()
     {
         wordText.setText(word[0].getWord());
@@ -82,7 +92,11 @@ public class wordViewController implements Initializable{
     }
 
 
-
+    /**
+     * Changes the view to definition scene
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void changeToDefinitionView(ActionEvent event) throws IOException
     {

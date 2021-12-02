@@ -36,7 +36,7 @@ public class APIUtility {
 
     }
 
-    public static DictionaryResponse[] getMoviesFromAPI(String searchText) throws IOException, InterruptedException {
+    public static DictionaryResponse[] getWordFromAPI(String searchText) throws IOException, InterruptedException {
         DictionaryResponse[] result = null;
 
         searchText = searchText.replace(" ", "%20");

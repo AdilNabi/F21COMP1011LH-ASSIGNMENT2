@@ -57,21 +57,19 @@ public class definitionViewController  implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        // view is populated with data from json
         word = APIUtility.getWordFromJSON();
-
         wordText.setText(word[0].getWord());
         phoneticText.setText(word[0].getPhonetic());
         originText.setText(word[0].getOrigin());
-
         definitionText.setText("");
         exampleText.setText("");
-
         populateMeaningBox();
 
-
-
+        // event handler for when user selects from meanings combobox which generates data in definition combo box
         EventHandler<ActionEvent> event =
-                new EventHandler<ActionEvent>() {
+                new EventHandler<ActionEvent>()
+                {
                     public void handle(ActionEvent e)
                     {
                         meaningSelection = (meaningBox.getSelectionModel().getSelectedIndex());
@@ -86,10 +84,11 @@ public class definitionViewController  implements Initializable {
 
         meaningBox.setOnAction(event);
 
-
-
+        // event handler for when user selects from definition combo box which populates the definition label, example label,
+        // synonym and antonyms listView
         EventHandler<ActionEvent> event2 =
-                new EventHandler<ActionEvent>() {
+                new EventHandler<ActionEvent>()
+                {
                     public void handle(ActionEvent e)
                     {
                         definitionIndexNullFix();
@@ -110,22 +109,12 @@ public class definitionViewController  implements Initializable {
                 };
 
         definitionBox.setOnAction(event2);
-
     }
 
-    public void clearAllFields(){
-        wordText.setText("");
-        phoneticText.setText("");
-        originText.setText("");
-        definitionText.setText("");
-        exampleText.setText("");
-        meaningBox.getItems().clear();
-        definitionBox.getItems().clear();
-        synonymsListView.getItems().clear();
-        antonymsListView.getItems().clear();
-
-    }
-
+    /**
+     * This method clears existing data from the view in order for it to be populated with new data when the
+     * user selects from the meaning combo box
+     */
     public void clearFieldMeaningSelect()
     {
         definitionText.setText("");
@@ -137,6 +126,9 @@ public class definitionViewController  implements Initializable {
         antonymsListView.getItems().clear();
     }
 
+    /**
+     * This method populates the meaning combo box with all typeofSpeech of the word
+     */
     public void populateMeaningBox()
     {
         meanings = word[0].getMeanings();
@@ -147,6 +139,9 @@ public class definitionViewController  implements Initializable {
         }
     }
 
+    /**
+     * This method populates the definition combo box with definitions of the respective meaning of the word
+     */
     public void populateDefinitionBox()
     {
         Definition[] def = meanings[meaningSelection].getDefinitions();
@@ -158,6 +153,10 @@ public class definitionViewController  implements Initializable {
     }
 
 
+    /**
+     * This method is meant to correct an error when changing the word via search causes an out of bound range error for array
+     * in the definition combo box
+     */
     public void definitionIndexNullFix()
     {
         if (definitionSelection == -1)
@@ -166,6 +165,10 @@ public class definitionViewController  implements Initializable {
         }
     }
 
+    /**
+     * This method is meant to correct an error when changing the word via search causes an out of bound range error for array
+     * in the meaning combo box
+     */
     public void meaningIndexNullFix()
     {
 
@@ -176,7 +179,9 @@ public class definitionViewController  implements Initializable {
     }
 
 
-
+    /**
+     * This method populates the synonymListView with synonyms of the word from its respective definition
+     */
     public void populateSynonymsList()
     {
         if (definitions[definitionSelection].getSynonyms().length > 0)
@@ -190,6 +195,9 @@ public class definitionViewController  implements Initializable {
     }
 
 
+    /**
+     * This method populates the antonymListView with antonyms of the word from its respective definition
+     */
     public void populateAntonymsList()
     {
         if (definitions[definitionSelection].getAntonyms().length > 0)
@@ -201,11 +209,14 @@ public class definitionViewController  implements Initializable {
         }
     }
 
-
-
-
+    /**
+     * This method changes view to the word search view
+     * @param event
+     * @throws IOException
+     */
     @FXML
-    void changeToWordView(ActionEvent event) throws IOException {
+    void changeToWordView(ActionEvent event) throws IOException
+    {
         SceneChanger.changeScenes(event,"word-view.fxml","Search Word View");
     }
 }

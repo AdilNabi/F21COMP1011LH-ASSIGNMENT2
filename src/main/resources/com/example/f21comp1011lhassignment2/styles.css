@@ -1,0 +1,11 @@
+.root {
+    -fx-background-color: #FEF5ED;
+    -fx-font-family: "Book Antiqua";
+}
+
+#titleLabel {
+    -fx-font-family: "Book Antiqua";
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-text-fill: #464660;
+}
